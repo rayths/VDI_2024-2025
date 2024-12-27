@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_428394c6377319cf9a39035d868813d7 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; 
+                bottom: 20px; left: 20px; width: 200px; height: 250px; 
+                background-color: white; z-index:9999; font-size:14px;
+                border:2px solid gray; padding: 10px;">
+    <b>Legenda Kategori POI:</b><br>
+    <i style="background:purple; width:12px; height:12px; display:inline-block;"></i> Cultural<br><i style="background:black; width:12px; height:12px; display:inline-block;"></i> Historical<br><i style="background:gray; width:12px; height:12px; display:inline-block;"></i> Architectural<br><i style="background:lightblue; width:12px; height:12px; display:inline-block;"></i> Religious<br><i style="background:orange; width:12px; height:12px; display:inline-block;"></i> Museum<br><i style="background:blue; width:12px; height:12px; display:inline-block;"></i> Transport<br><i style="background:red; width:12px; height:12px; display:inline-block;"></i> Education<br><i style="background:green; width:12px; height:12px; display:inline-block;"></i> Park<br><i style="background:yellow; width:12px; height:12px; display:inline-block;"></i> Amusement<br><i style="background:pink; width:12px; height:12px; display:inline-block;"></i> Beach<br></div>
+    
+            <div class="folium-map" id="map_428394c6377319cf9a39035d868813d7" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_428394c6377319cf9a39035d868813d7 = L.map(
+                "map_428394c6377319cf9a39035d868813d7",
+                {
+                    center: [28.566479, 77.20135933333334],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c69e6bf9a34433907bcd437439ddb618 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_c69e6bf9a34433907bcd437439ddb618.addTo(map_428394c6377319cf9a39035d868813d7);
+        
+    
+            var marker_0bf663ded2bc97c0c11fa73f7e9885b0 = L.marker(
+                [28.524382, 77.18543],
+                {
+}
+            ).addTo(map_428394c6377319cf9a39035d868813d7);
+        
+    
+            var icon_3dad6843ad85534a2eb7a763b3326c30 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_0bf663ded2bc97c0c11fa73f7e9885b0.setIcon(icon_3dad6843ad85534a2eb7a763b3326c30);
+        
+    
+        var popup_97803f1fb2ecdc6ae731e8f5d36a7558 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8a12ec4b38c4b5cb96acebae0fe0edac = $(`<div id="html_8a12ec4b38c4b5cb96acebae0fe0edac" style="width: 100.0%; height: 100.0%;"><b>Qutb_complex</b><br>Kunjungan: 709<br>Kategori: Architectural</div>`)[0];
+                popup_97803f1fb2ecdc6ae731e8f5d36a7558.setContent(html_8a12ec4b38c4b5cb96acebae0fe0edac);
+            
+        
+
+        marker_0bf663ded2bc97c0c11fa73f7e9885b0.bindPopup(popup_97803f1fb2ecdc6ae731e8f5d36a7558)
+        ;
+
+        
+    
+    
+            var marker_33ca8fc66eb3d08b8eb8fa97d094fd10 = L.marker(
+                [28.6507, 77.2334],
+                {
+}
+            ).addTo(map_428394c6377319cf9a39035d868813d7);
+        
+    
+            var icon_bb8a8ea008e21e45e9cc946cfa9b7485 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightblue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_33ca8fc66eb3d08b8eb8fa97d094fd10.setIcon(icon_bb8a8ea008e21e45e9cc946cfa9b7485);
+        
+    
+        var popup_40bcd5cb11abcb72aa26f9ab3dc54e4f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b11564e1a83c84c40c59146d757cb599 = $(`<div id="html_b11564e1a83c84c40c59146d757cb599" style="width: 100.0%; height: 100.0%;"><b>Jama_Masjid,_Delhi</b><br>Kunjungan: 534<br>Kategori: Religious</div>`)[0];
+                popup_40bcd5cb11abcb72aa26f9ab3dc54e4f.setContent(html_b11564e1a83c84c40c59146d757cb599);
+            
+        
+
+        marker_33ca8fc66eb3d08b8eb8fa97d094fd10.bindPopup(popup_40bcd5cb11abcb72aa26f9ab3dc54e4f)
+        ;
+
+        
+    
+    
+            var marker_e19bf08218c3e764be31e31e6e814db3 = L.marker(
+                [28.524355, 77.185248],
+                {
+}
+            ).addTo(map_428394c6377319cf9a39035d868813d7);
+        
+    
+            var icon_379bbed5594fb1fb018e24b0bfe4f711 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_e19bf08218c3e764be31e31e6e814db3.setIcon(icon_379bbed5594fb1fb018e24b0bfe4f711);
+        
+    
+        var popup_9c046278a10dde28fc4055ec5bdbecc2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b6d6b6c57c25f36185faaff2467d2b42 = $(`<div id="html_b6d6b6c57c25f36185faaff2467d2b42" style="width: 100.0%; height: 100.0%;"><b>Qutub_Minar</b><br>Kunjungan: 418<br>Kategori: Architectural</div>`)[0];
+                popup_9c046278a10dde28fc4055ec5bdbecc2.setContent(html_b6d6b6c57c25f36185faaff2467d2b42);
+            
+        
+
+        marker_e19bf08218c3e764be31e31e6e814db3.bindPopup(popup_9c046278a10dde28fc4055ec5bdbecc2)
+        ;
+
+        
+    
+</script>
+</html>

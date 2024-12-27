@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_fe2d11e5fd8dddc5215b2bbd4f6b8275 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; 
+                bottom: 20px; left: 20px; width: 200px; height: 250px; 
+                background-color: white; z-index:9999; font-size:14px;
+                border:2px solid gray; padding: 10px;">
+    <b>Legenda Kategori POI:</b><br>
+    <i style="background:purple; width:12px; height:12px; display:inline-block;"></i> Cultural<br><i style="background:black; width:12px; height:12px; display:inline-block;"></i> Historical<br><i style="background:gray; width:12px; height:12px; display:inline-block;"></i> Architectural<br><i style="background:lightblue; width:12px; height:12px; display:inline-block;"></i> Religious<br><i style="background:orange; width:12px; height:12px; display:inline-block;"></i> Museum<br><i style="background:blue; width:12px; height:12px; display:inline-block;"></i> Transport<br><i style="background:red; width:12px; height:12px; display:inline-block;"></i> Education<br><i style="background:green; width:12px; height:12px; display:inline-block;"></i> Park<br><i style="background:yellow; width:12px; height:12px; display:inline-block;"></i> Amusement<br><i style="background:pink; width:12px; height:12px; display:inline-block;"></i> Beach<br></div>
+    
+            <div class="folium-map" id="map_fe2d11e5fd8dddc5215b2bbd4f6b8275" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_fe2d11e5fd8dddc5215b2bbd4f6b8275 = L.map(
+                "map_fe2d11e5fd8dddc5215b2bbd4f6b8275",
+                {
+                    center: [34.682324, 135.48147966666667],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_2670ef817e2fa0f8e9b168f4e5626259 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_2670ef817e2fa0f8e9b168f4e5626259.addTo(map_fe2d11e5fd8dddc5215b2bbd4f6b8275);
+        
+    
+            var marker_1c118624967160b7dd657f289c09e2db = L.marker(
+                [34.68722, 135.52583],
+                {
+}
+            ).addTo(map_fe2d11e5fd8dddc5215b2bbd4f6b8275);
+        
+    
+            var icon_9200e9ca22d2e7fdc1f4e973274f581d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_1c118624967160b7dd657f289c09e2db.setIcon(icon_9200e9ca22d2e7fdc1f4e973274f581d);
+        
+    
+        var popup_da4cc9e48f5b44ed5e570ac7e5792e72 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_458cb479982b515f343f12ca73f9ee14 = $(`<div id="html_458cb479982b515f343f12ca73f9ee14" style="width: 100.0%; height: 100.0%;"><b>Osaka_Castle</b><br>Kunjungan: 1307<br>Kategori: Park</div>`)[0];
+                popup_da4cc9e48f5b44ed5e570ac7e5792e72.setContent(html_458cb479982b515f343f12ca73f9ee14);
+            
+        
+
+        marker_1c118624967160b7dd657f289c09e2db.bindPopup(popup_da4cc9e48f5b44ed5e570ac7e5792e72)
+        ;
+
+        
+    
+    
+            var marker_e56716c23d3400b31da249b2c09439df = L.marker(
+                [34.654472, 135.428889],
+                {
+}
+            ).addTo(map_fe2d11e5fd8dddc5215b2bbd4f6b8275);
+        
+    
+            var icon_56cdc3615f58fcf5cf92cdf4c3ebc47b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "yellow",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_e56716c23d3400b31da249b2c09439df.setIcon(icon_56cdc3615f58fcf5cf92cdf4c3ebc47b);
+        
+    
+        var popup_bf8fbb2d9ec2ee63d831473f0ad332ac = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_be023b1d9b81cdf355b206625dca6649 = $(`<div id="html_be023b1d9b81cdf355b206625dca6649" style="width: 100.0%; height: 100.0%;"><b>Osaka_Aquarium_Kaiyukan</b><br>Kunjungan: 886<br>Kategori: Amusement</div>`)[0];
+                popup_bf8fbb2d9ec2ee63d831473f0ad332ac.setContent(html_be023b1d9b81cdf355b206625dca6649);
+            
+        
+
+        marker_e56716c23d3400b31da249b2c09439df.bindPopup(popup_bf8fbb2d9ec2ee63d831473f0ad332ac)
+        ;
+
+        
+    
+    
+            var marker_8a2e542d27338936cff9425674ea2b5a = L.marker(
+                [34.70528, 135.48972],
+                {
+}
+            ).addTo(map_fe2d11e5fd8dddc5215b2bbd4f6b8275);
+        
+    
+            var icon_1b725e327497f55733e29310edc041f8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "yellow",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_8a2e542d27338936cff9425674ea2b5a.setIcon(icon_1b725e327497f55733e29310edc041f8);
+        
+    
+        var popup_7b3e288aa3bb1d9e2f13dccb0453cb5b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4b831dd1a522bfcff8a4675e2105562c = $(`<div id="html_4b831dd1a522bfcff8a4675e2105562c" style="width: 100.0%; height: 100.0%;"><b>Umeda_Sky_Building</b><br>Kunjungan: 660<br>Kategori: Amusement</div>`)[0];
+                popup_7b3e288aa3bb1d9e2f13dccb0453cb5b.setContent(html_4b831dd1a522bfcff8a4675e2105562c);
+            
+        
+
+        marker_8a2e542d27338936cff9425674ea2b5a.bindPopup(popup_7b3e288aa3bb1d9e2f13dccb0453cb5b)
+        ;
+
+        
+    
+</script>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_b3de26786efe7ebc908bac508ce8c979 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; 
+                bottom: 20px; left: 20px; width: 200px; height: 250px; 
+                background-color: white; z-index:9999; font-size:14px;
+                border:2px solid gray; padding: 10px;">
+    <b>Legenda Kategori POI:</b><br>
+    <i style="background:purple; width:12px; height:12px; display:inline-block;"></i> Cultural<br><i style="background:black; width:12px; height:12px; display:inline-block;"></i> Historical<br><i style="background:gray; width:12px; height:12px; display:inline-block;"></i> Architectural<br><i style="background:lightblue; width:12px; height:12px; display:inline-block;"></i> Religious<br><i style="background:orange; width:12px; height:12px; display:inline-block;"></i> Museum<br><i style="background:blue; width:12px; height:12px; display:inline-block;"></i> Transport<br><i style="background:red; width:12px; height:12px; display:inline-block;"></i> Education<br><i style="background:green; width:12px; height:12px; display:inline-block;"></i> Park<br><i style="background:yellow; width:12px; height:12px; display:inline-block;"></i> Amusement<br><i style="background:pink; width:12px; height:12px; display:inline-block;"></i> Beach<br></div>
+    
+            <div class="folium-map" id="map_b3de26786efe7ebc908bac508ce8c979" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_b3de26786efe7ebc908bac508ce8c979 = L.map(
+                "map_b3de26786efe7ebc908bac508ce8c979",
+                {
+                    center: [55.94833033333333, -3.1938876666666665],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_f0b3f91e50175e6a341b7ac92dedeae2 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_f0b3f91e50175e6a341b7ac92dedeae2.addTo(map_b3de26786efe7ebc908bac508ce8c979);
+        
+    
+            var marker_a050eae0ed7272f5fac4a96dcf88947c = L.marker(
+                [55.948611, -3.200833],
+                {
+}
+            ).addTo(map_b3de26786efe7ebc908bac508ce8c979);
+        
+    
+            var icon_ee59fa991f550dce49b5e2573797159c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "black",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a050eae0ed7272f5fac4a96dcf88947c.setIcon(icon_ee59fa991f550dce49b5e2573797159c);
+        
+    
+        var popup_cabb5fa7d15fdfe1974b35923adb8e1b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2846455df17fb4900837c4fe89cd454a = $(`<div id="html_2846455df17fb4900837c4fe89cd454a" style="width: 100.0%; height: 100.0%;"><b>Edinburgh_Castle</b><br>Kunjungan: 4569<br>Kategori: Historical</div>`)[0];
+                popup_cabb5fa7d15fdfe1974b35923adb8e1b.setContent(html_2846455df17fb4900837c4fe89cd454a);
+            
+        
+
+        marker_a050eae0ed7272f5fac4a96dcf88947c.bindPopup(popup_cabb5fa7d15fdfe1974b35923adb8e1b)
+        ;
+
+        
+    
+    
+            var marker_166cd32970ae72ce433e8fb30e6f147b = L.marker(
+                [55.94944, -3.19083],
+                {
+}
+            ).addTo(map_b3de26786efe7ebc908bac508ce8c979);
+        
+    
+            var icon_1712e54608dc403ed80c7a746e1f06af = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_166cd32970ae72ce433e8fb30e6f147b.setIcon(icon_1712e54608dc403ed80c7a746e1f06af);
+        
+    
+        var popup_217cb39d405cbe32d4a6358cdc2470a0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_88ffb4997034ed35ed007e1f4d21615f = $(`<div id="html_88ffb4997034ed35ed007e1f4d21615f" style="width: 100.0%; height: 100.0%;"><b>St_Giles'_Cathedral</b><br>Kunjungan: 4452<br>Kategori: Cultural</div>`)[0];
+                popup_217cb39d405cbe32d4a6358cdc2470a0.setContent(html_88ffb4997034ed35ed007e1f4d21615f);
+            
+        
+
+        marker_166cd32970ae72ce433e8fb30e6f147b.bindPopup(popup_217cb39d405cbe32d4a6358cdc2470a0)
+        ;
+
+        
+    
+    
+            var marker_e8a606cc9c2b72b789695065bbf9b221 = L.marker(
+                [55.94694, -3.19],
+                {
+}
+            ).addTo(map_b3de26786efe7ebc908bac508ce8c979);
+        
+    
+            var icon_aa7e7aff348edabc1a93f3c58dcea7d2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_e8a606cc9c2b72b789695065bbf9b221.setIcon(icon_aa7e7aff348edabc1a93f3c58dcea7d2);
+        
+    
+        var popup_8dffe21c682f9ee168c1c5b7ee746357 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cee0c557e72f01d643a8ec01479a9b3c = $(`<div id="html_cee0c557e72f01d643a8ec01479a9b3c" style="width: 100.0%; height: 100.0%;"><b>National_Museum_of_Scotland</b><br>Kunjungan: 3140<br>Kategori: Museum</div>`)[0];
+                popup_8dffe21c682f9ee168c1c5b7ee746357.setContent(html_cee0c557e72f01d643a8ec01479a9b3c);
+            
+        
+
+        marker_e8a606cc9c2b72b789695065bbf9b221.bindPopup(popup_8dffe21c682f9ee168c1c5b7ee746357)
+        ;
+
+        
+    
+</script>
+</html>
