@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_8523e9458190b124307a349bf4664a1f {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; 
+            bottom: 20px; left: 20px; width: 200px; height: 150px; 
+            background-color: white; z-index:9999; font-size:14px;
+            border:2px solid grey; padding: 10px;">
+<b>Legenda Kategori POI:</b><br>
+<i style="background:purple; width:12px; height:12px; display:inline-block;"></i> Cultural<br><i style="background:grey; width:12px; height:12px; display:inline-block;"></i> Architectural<br><i style="background:orange; width:12px; height:12px; display:inline-block;"></i> Historical<br><i style="background:lightblue; width:12px; height:12px; display:inline-block;"></i> Transport<br><i style="background:green; width:12px; height:12px; display:inline-block;"></i> Park<br></div>
+    
+            <div class="folium-map" id="map_8523e9458190b124307a349bf4664a1f" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_8523e9458190b124307a349bf4664a1f = L.map(
+                "map_8523e9458190b124307a349bf4664a1f",
+                {
+                    center: [35.304706625, 34.640665875],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 3,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_f24619636cb34b90b23ac0ab3aa8479c = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_f24619636cb34b90b23ac0ab3aa8479c.addTo(map_8523e9458190b124307a349bf4664a1f);
+        
+    
+            var marker_96312e0416b381b87e6e6232179d659f = L.marker(
+                [47.50194, 19.03417],
+                {
+}
+            ).addTo(map_8523e9458190b124307a349bf4664a1f);
+        
+    
+            var icon_aabef3f5b40c566c4140c4ecea1ffe27 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_96312e0416b381b87e6e6232179d659f.setIcon(icon_aabef3f5b40c566c4140c4ecea1ffe27);
+        
+    
+        var popup_40fc03490cacb8a017897d975f54f9b7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5ef3cf7444b34b10768354bdfbb7e399 = $(`<div id="html_5ef3cf7444b34b10768354bdfbb7e399" style="width: 100.0%; height: 100.0%;"><b>Nama:</b> Matthias_Church<br><b>Kota:</b> Budapest<br><b>Tema:</b> Cultural<br><b>Kunjungan:</b> 1584</div>`)[0];
+                popup_40fc03490cacb8a017897d975f54f9b7.setContent(html_5ef3cf7444b34b10768354bdfbb7e399);
+            
+        
+
+        marker_96312e0416b381b87e6e6232179d659f.bindPopup(popup_40fc03490cacb8a017897d975f54f9b7)
+        ;
+
+        
+    
+    
+            marker_96312e0416b381b87e6e6232179d659f.bindTooltip(
+                `<div>
+                     Matthias_Church (1584 kunjungan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4335dc6a70a93a4c50b873d0bff68a43 = L.marker(
+                [28.524382, 77.18543],
+                {
+}
+            ).addTo(map_8523e9458190b124307a349bf4664a1f);
+        
+    
+            var icon_0563de8d6ebb47271c32e6d1f6c649e1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "grey",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_4335dc6a70a93a4c50b873d0bff68a43.setIcon(icon_0563de8d6ebb47271c32e6d1f6c649e1);
+        
+    
+        var popup_888cfc0d1a1e891c479596e2f81c0e35 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3085068681d36a534cbc4d0d63f3f269 = $(`<div id="html_3085068681d36a534cbc4d0d63f3f269" style="width: 100.0%; height: 100.0%;"><b>Nama:</b> Qutb_complex<br><b>Kota:</b> Delhi<br><b>Tema:</b> Architectural<br><b>Kunjungan:</b> 709</div>`)[0];
+                popup_888cfc0d1a1e891c479596e2f81c0e35.setContent(html_3085068681d36a534cbc4d0d63f3f269);
+            
+        
+
+        marker_4335dc6a70a93a4c50b873d0bff68a43.bindPopup(popup_888cfc0d1a1e891c479596e2f81c0e35)
+        ;
+
+        
+    
+    
+            marker_4335dc6a70a93a4c50b873d0bff68a43.bindTooltip(
+                `<div>
+                     Qutb_complex (709 kunjungan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_b421e833661a75da90cb7a9d8c266bbb = L.marker(
+                [55.948611, -3.200833],
+                {
+}
+            ).addTo(map_8523e9458190b124307a349bf4664a1f);
+        
+    
+            var icon_aa9123dcb0c4365d3bd2f83691b3664c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_b421e833661a75da90cb7a9d8c266bbb.setIcon(icon_aa9123dcb0c4365d3bd2f83691b3664c);
+        
+    
+        var popup_a28de5b34931f5b9d92e5aecff3555e2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bea5439304bb05c838da025ebaa225d7 = $(`<div id="html_bea5439304bb05c838da025ebaa225d7" style="width: 100.0%; height: 100.0%;"><b>Nama:</b> Edinburgh_Castle<br><b>Kota:</b> Edinburgh<br><b>Tema:</b> Historical<br><b>Kunjungan:</b> 4569</div>`)[0];
+                popup_a28de5b34931f5b9d92e5aecff3555e2.setContent(html_bea5439304bb05c838da025ebaa225d7);
+            
+        
+
+        marker_b421e833661a75da90cb7a9d8c266bbb.bindPopup(popup_a28de5b34931f5b9d92e5aecff3555e2)
+        ;
+
+        
+    
+    
+            marker_b421e833661a75da90cb7a9d8c266bbb.bindTooltip(
+                `<div>
+                     Edinburgh_Castle (4569 kunjungan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_b15d10e65bc54fabcdf72f47cd8e81e3 = L.marker(
+                [55.858, -4.258],
+                {
+}
+            ).addTo(map_8523e9458190b124307a349bf4664a1f);
+        
+    
+            var icon_4aef3852a973876c9a778dedfbcf46e3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightblue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_b15d10e65bc54fabcdf72f47cd8e81e3.setIcon(icon_4aef3852a973876c9a778dedfbcf46e3);
+        
+    
+        var popup_1f0a54f53dc5392304f3c3d3134946a2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0feab3b5bed8da9216f2815694e2bf42 = $(`<div id="html_0feab3b5bed8da9216f2815694e2bf42" style="width: 100.0%; height: 100.0%;"><b>Nama:</b> Glasgow_Central_railway_station<br><b>Kota:</b> Glasgow<br><b>Tema:</b> Transport<br><b>Kunjungan:</b> 1491</div>`)[0];
+                popup_1f0a54f53dc5392304f3c3d3134946a2.setContent(html_0feab3b5bed8da9216f2815694e2bf42);
+            
+        
+
+        marker_b15d10e65bc54fabcdf72f47cd8e81e3.bindPopup(popup_1f0a54f53dc5392304f3c3d3134946a2)
+        ;
+
+        
+    
+    
+            marker_b15d10e65bc54fabcdf72f47cd8e81e3.bindTooltip(
+                `<div>
+                     Glasgow_Central_railway_station (1491 kunjungan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_e5188a33d7150f58e1f491b14861e889 = L.marker(
+                [34.68722, 135.52583],
+                {
+}
+            ).addTo(map_8523e9458190b124307a349bf4664a1f);
+        
+    
+            var icon_8edeb359f23f4d1ea19df92ac95c416b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_e5188a33d7150f58e1f491b14861e889.setIcon(icon_8edeb359f23f4d1ea19df92ac95c416b);
+        
+    
+        var popup_aa65b70a8c2d772066c791ebb033ea07 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ed9e5bf0ed580ae3775312e5485c6647 = $(`<div id="html_ed9e5bf0ed580ae3775312e5485c6647" style="width: 100.0%; height: 100.0%;"><b>Nama:</b> Osaka_Castle<br><b>Kota:</b> Osaka<br><b>Tema:</b> Park<br><b>Kunjungan:</b> 1307</div>`)[0];
+                popup_aa65b70a8c2d772066c791ebb033ea07.setContent(html_ed9e5bf0ed580ae3775312e5485c6647);
+            
+        
+
+        marker_e5188a33d7150f58e1f491b14861e889.bindPopup(popup_aa65b70a8c2d772066c791ebb033ea07)
+        ;
+
+        
+    
+    
+            marker_e5188a33d7150f58e1f491b14861e889.bindTooltip(
+                `<div>
+                     Osaka_Castle (1307 kunjungan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_94c102ce62090e104fc2fbc27cb8a7d6 = L.marker(
+                [-31.9585, 115.8599],
+                {
+}
+            ).addTo(map_8523e9458190b124307a349bf4664a1f);
+        
+    
+            var icon_9484458897979e9919348a1210a0bc4a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_94c102ce62090e104fc2fbc27cb8a7d6.setIcon(icon_9484458897979e9919348a1210a0bc4a);
+        
+    
+        var popup_f7a3f56d3ffc13bf61c5c3a64cf930de = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c836ec55963e442fd598583ad4705217 = $(`<div id="html_c836ec55963e442fd598583ad4705217" style="width: 100.0%; height: 100.0%;"><b>Nama:</b> Supreme_Court_Gardens<br><b>Kota:</b> Perth<br><b>Tema:</b> Park<br><b>Kunjungan:</b> 500</div>`)[0];
+                popup_f7a3f56d3ffc13bf61c5c3a64cf930de.setContent(html_c836ec55963e442fd598583ad4705217);
+            
+        
+
+        marker_94c102ce62090e104fc2fbc27cb8a7d6.bindPopup(popup_f7a3f56d3ffc13bf61c5c3a64cf930de)
+        ;
+
+        
+    
+    
+            marker_94c102ce62090e104fc2fbc27cb8a7d6.bindTooltip(
+                `<div>
+                     Supreme_Court_Gardens (500 kunjungan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_63760e7e836c14b45e62a92b99b4751c = L.marker(
+                [43.6675, -79.39417],
+                {
+}
+            ).addTo(map_8523e9458190b124307a349bf4664a1f);
+        
+    
+            var icon_b5af8e29dfc4602dd32c0f3a87184b08 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_63760e7e836c14b45e62a92b99b4751c.setIcon(icon_b5af8e29dfc4602dd32c0f3a87184b08);
+        
+    
+        var popup_e955ab83fbfb5f6651f05a90226ae55a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_25d8a1e9f2e49f1f0247dffccbe3691f = $(`<div id="html_25d8a1e9f2e49f1f0247dffccbe3691f" style="width: 100.0%; height: 100.0%;"><b>Nama:</b> Royal_Ontario_Museum<br><b>Kota:</b> Toronto<br><b>Tema:</b> Cultural<br><b>Kunjungan:</b> 4142</div>`)[0];
+                popup_e955ab83fbfb5f6651f05a90226ae55a.setContent(html_25d8a1e9f2e49f1f0247dffccbe3691f);
+            
+        
+
+        marker_63760e7e836c14b45e62a92b99b4751c.bindPopup(popup_e955ab83fbfb5f6651f05a90226ae55a)
+        ;
+
+        
+    
+    
+            marker_63760e7e836c14b45e62a92b99b4751c.bindTooltip(
+                `<div>
+                     Royal_Ontario_Museum (4142 kunjungan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_8046468397c117e9dc9af91ee105aeb9 = L.marker(
+                [48.2085, 16.373],
+                {
+}
+            ).addTo(map_8523e9458190b124307a349bf4664a1f);
+        
+    
+            var icon_fafc9492fc4ad87de0c251cdae4e6397 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_8046468397c117e9dc9af91ee105aeb9.setIcon(icon_fafc9492fc4ad87de0c251cdae4e6397);
+        
+    
+        var popup_7591fc9abff90733fd521c833ba1af53 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_45546b0ec692a6b8eca20dcdc44cd765 = $(`<div id="html_45546b0ec692a6b8eca20dcdc44cd765" style="width: 100.0%; height: 100.0%;"><b>Nama:</b> St._Stephen's_Cathedral,_Vienna<br><b>Kota:</b> Vienna<br><b>Tema:</b> Historical<br><b>Kunjungan:</b> 5533</div>`)[0];
+                popup_7591fc9abff90733fd521c833ba1af53.setContent(html_45546b0ec692a6b8eca20dcdc44cd765);
+            
+        
+
+        marker_8046468397c117e9dc9af91ee105aeb9.bindPopup(popup_7591fc9abff90733fd521c833ba1af53)
+        ;
+
+        
+    
+    
+            marker_8046468397c117e9dc9af91ee105aeb9.bindTooltip(
+                `<div>
+                     St._Stephen's_Cathedral,_Vienna (5533 kunjungan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
